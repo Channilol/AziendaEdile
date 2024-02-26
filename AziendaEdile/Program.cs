@@ -1,19 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
-app.MapGet("/", (HttpContext context) => { 
-    context.Response.ContentType = "text/html";
-    return "Hello World!"; 
-});
-
-app.MapGet("/addWorker", (HttpContext context) => {
-    context.Response.ContentType = "text/html";
-    return "Add worker form";
-});
-
-app.MapGet("/addPayment", (HttpContext context) => {
-    context.Response.ContentType = "text/html";
-    return "Add payment form";
-});
+app.UseRouting();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
 
 app.Run();
