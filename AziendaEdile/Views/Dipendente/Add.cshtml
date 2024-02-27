@@ -1,3 +1,16 @@
-﻿<form>
-    <input type="text" placeholder="Scrivi qui..."/>
-</form>
+﻿<div class="container">
+    <form asp-controller="Dipendente" asp-action="Add" method="post">
+        Nome: <input class="form-control" type="text" name="Nome" />
+        Cognome: <input class="form-control" type="text" name="Cognome" />
+        Indirizzo: <input class="form-control" type="text" name="Indirizzo" />
+        Codice Fiscale: <input class="form-control" type="text" name="CodiceFiscale" />
+        <br />
+        Coniugato? <input class="form-check-label" type="checkbox" name="Coniugato" value="1" />
+        <br />
+        <br />
+        Numero Figli: <input class="form-control" type="number" name="NumFigli" />
+        Mansione: <input class="form-control" type="text" name="Mansione" />
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

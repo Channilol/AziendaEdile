@@ -14,5 +14,12 @@ namespace AziendaEdile.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Add(string Nome, string Cognome, string Indirizzo, string CodiceFiscale, bool Coniugato, int NumFigli, string Mansione)
+        {
+            var dipendente = StaticDB.Add(Nome, Cognome, Indirizzo, CodiceFiscale, Coniugato, NumFigli, Mansione);
+            return RedirectToAction("Index");
+        }
     }
 }
