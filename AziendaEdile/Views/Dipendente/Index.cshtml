@@ -1,0 +1,35 @@
+﻿@section styles {
+    <link href="c:\users\fcann\documents\epicode\corsofullstack\esercitazioni\backend\settimana 4 asp.net mvc\s1l1\aziendaedile\aziendaedile\styles\stylesheet.css" rel="stylesheet" />
+}
+
+<div class="container mt-4">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col">Codice Fiscale</th>
+                <th scope="col">Coniugato</th>
+                <th scope="col">N. Figli</th>
+                <th scope="col">Mansione</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var dipendente in Model)
+            {
+            <tr>
+                <th scope="row">@dipendente.IdDipendente</th>
+                <td>@dipendente.Nome</td>
+                <td>@dipendente.Cognome</td>
+                <td>@dipendente.Indirizzo</td>
+                <td>@dipendente.CodiceFiscale</td>
+                <td>@(dipendente.Coniugato ? "Si" : "No")</td>
+                <td>@dipendente.NumFigli</td>
+                <td>@dipendente.Mansione</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
